@@ -1,0 +1,90 @@
+# Andriod-Stadio
+
+
+package com.example.lestenerpart2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    private Button btn1,btn2;
+    private TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btn1 = (Button) findViewById(R.id.btn1);
+        textView =(TextView) findViewById(R.id.text1);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setText("Login Button Click");
+            }
+        });
+
+        btn2 = (Button) findViewById(R.id.btn2);
+        textView =(TextView) findViewById(R.id.text1);
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setText("Logout Button Click");
+            }
+        });
+    }
+}
+
+
+
+/////XML......
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      android:gravity="center">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/btn1"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/btn2"
+        />
+  </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/text1"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"/>
+
+
+</RelativeLayout>
