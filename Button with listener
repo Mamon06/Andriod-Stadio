@@ -1,0 +1,67 @@
+# Andriod-Stadio
+
+//Activity.main XML......
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <Button
+       android:id="@+id/btn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:background="@color/white"
+       android:text="OK"
+       />
+   <TextView
+       android:layout_below="@+id/btn"
+       android:id="@+id/textViewId"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textSize="22dp"
+      />
+
+</RelativeLayout>
+
+//java main file.....
+
+package com.example.buttonwithlistener;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+
+public class MainActivity extends AppCompatActivity {
+    int count = 0;
+    private Button btn;
+    private TextView textViewId;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        btn = (Button) findViewById(R.id.btn);
+        textViewId = (TextView)findViewById(R.id.textViewId);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View V) {
+                count++;
+                textViewId.setText("Login button on click" +count+" times");//koto tyme porjonto count korbe....
+            }
+        });
+
+    }
+}
